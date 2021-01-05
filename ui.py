@@ -14,74 +14,101 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Messafge(object):
     def setupUi(self, Messafge):
         Messafge.setObjectName("Messafge")
-        Messafge.resize(240, 331)
-        icon = QtGui.QIcon.fromTheme("Dark")
+        Messafge.resize(320, 240)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Messafge.sizePolicy().hasHeightForWidth())
+        Messafge.setSizePolicy(sizePolicy)
+        Messafge.setMinimumSize(QtCore.QSize(320, 240))
+        Messafge.setMaximumSize(QtCore.QSize(320, 240))
+        font = QtGui.QFont()
+        font.setFamily("Futura")
+        Messafge.setFont(font)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Messafge.setWindowIcon(icon)
-        Messafge.setStyleSheet("QMainWindow{\n"
-"background: #393939;\n"
-"}\n"
-"\n"
-"QPushButton{\n"
-"background: #5A5A5B;\n"
-"border-radius: 8px;\n"
+        Messafge.setWindowOpacity(0.85)
+        Messafge.setAutoFillBackground(False)
+        Messafge.setStyleSheet("QPushButton{\n"
+"background: #606061;\n"
+"border-radius: 10px;\n"
 "color: black;\n"
 "}\n"
 "QPushButton:hover{\n"
 "background: #D1AF00;\n"
 "}\n"
+"QPushButton:pressed{\n"
+"background: #9A7300;\n"
+"border-radius: 13px;\n"
+"}\n"
 "\n"
 "QPlainTextEdit{\n"
-"background: #454546;\n"
-"border-radius: 5px;\n"
+"background: #2E2E2E;\n"
+"border-radius: 10%;\n"
+"сolor: rgb(204, 204, 204);\n"
+"font: 13pt \"Gill Sans\";\n"
 "}\n"
 "\n"
 "QTextBrowser{\n"
-"background: #454546;\n"
-"border-radius: 5px;\n"
+"background: #2E2E2E;\n"
+"border-radius: 10%;\n"
+"}\n"
+"\n"
+"QMainWindow{\n"
+"background-color: #393939;\n"
 "}\n"
 "")
+        Messafge.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.centralwidget = QtWidgets.QWidget(Messafge)
         self.centralwidget.setObjectName("centralwidget")
-        self.tabW = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabW.setGeometry(QtCore.QRect(0, 0, 241, 331))
-        self.tabW.setMouseTracking(True)
-        self.tabW.setStyleSheet("color: black\n"
-"")
-        self.tabW.setObjectName("tabW")
-        self.tab = QtWidgets.QWidget()
-        self.tab.setObjectName("tab")
-        self.encrypt = QtWidgets.QPushButton(self.tab)
-        self.encrypt.setGeometry(QtCore.QRect(2, 267, 231, 32))
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 321, 241))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
+        self.tabWidget.setSizePolicy(sizePolicy)
+        self.tabWidget.setMaximumSize(QtCore.QSize(321, 241))
+        self.tabWidget.setStyleSheet("")
+        self.tabWidget.setTabsClosable(False)
+        self.tabWidget.setMovable(True)
+        self.tabWidget.setTabBarAutoHide(True)
+        self.tabWidget.setObjectName("tabWidget")
+        self.encrypt_tab = QtWidgets.QWidget()
+        self.encrypt_tab.setObjectName("encrypt_tab")
+        self.encrypt = QtWidgets.QPushButton(self.encrypt_tab)
+        self.encrypt.setGeometry(QtCore.QRect(7, 175, 301, 32))
         self.encrypt.setObjectName("encrypt")
-        self.encrypt_input = QtWidgets.QPlainTextEdit(self.tab)
-        self.encrypt_input.setGeometry(QtCore.QRect(-3, 0, 241, 121))
-        self.encrypt_input.setObjectName("encrypt_input")
-        self.encrypt_out = QtWidgets.QTextBrowser(self.tab)
-        self.encrypt_out.setGeometry(QtCore.QRect(-3, 130, 241, 131))
+        self.encrypt_out = QtWidgets.QTextBrowser(self.encrypt_tab)
+        self.encrypt_out.setGeometry(QtCore.QRect(-2, 79, 321, 91))
         self.encrypt_out.setObjectName("encrypt_out")
-        self.tabW.addTab(self.tab, "")
-        self.tab_2 = QtWidgets.QWidget()
-        self.tab_2.setObjectName("tab_2")
-        self.decrypt_input = QtWidgets.QPlainTextEdit(self.tab_2)
-        self.decrypt_input.setGeometry(QtCore.QRect(-3, 0, 241, 121))
-        self.decrypt_input.setObjectName("decrypt_input")
-        self.decrypt_out = QtWidgets.QTextBrowser(self.tab_2)
-        self.decrypt_out.setGeometry(QtCore.QRect(-3, 130, 241, 131))
-        self.decrypt_out.setObjectName("decrypt_out")
-        self.decrypt = QtWidgets.QPushButton(self.tab_2)
-        self.decrypt.setGeometry(QtCore.QRect(2, 267, 231, 32))
+        self.encrypt_input = QtWidgets.QPlainTextEdit(self.encrypt_tab)
+        self.encrypt_input.setGeometry(QtCore.QRect(-3, 0, 321, 71))
+        self.encrypt_input.setObjectName("encrypt_input")
+        self.tabWidget.addTab(self.encrypt_tab, "")
+        self.decrypt_tab = QtWidgets.QWidget()
+        self.decrypt_tab.setObjectName("decrypt_tab")
+        self.decrypt = QtWidgets.QPushButton(self.decrypt_tab)
+        self.decrypt.setGeometry(QtCore.QRect(7, 175, 301, 32))
         self.decrypt.setObjectName("decrypt")
-        self.tabW.addTab(self.tab_2, "")
+        self.decrypt_input = QtWidgets.QPlainTextEdit(self.decrypt_tab)
+        self.decrypt_input.setGeometry(QtCore.QRect(-4, 0, 321, 71))
+        self.decrypt_input.setObjectName("decrypt_input")
+        self.decrypt_out = QtWidgets.QTextBrowser(self.decrypt_tab)
+        self.decrypt_out.setGeometry(QtCore.QRect(-3, 79, 321, 91))
+        self.decrypt_out.setObjectName("decrypt_out")
+        self.tabWidget.addTab(self.decrypt_tab, "")
         Messafge.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Messafge)
-        self.tabW.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Messafge)
 
     def retranslateUi(self, Messafge):
         _translate = QtCore.QCoreApplication.translate
         Messafge.setWindowTitle(_translate("Messafge", "Messafge"))
         self.encrypt.setText(_translate("Messafge", "Encrypt"))
-        self.tabW.setTabText(self.tabW.indexOf(self.tab), _translate("Messafge", "Encrypt"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.encrypt_tab), _translate("Messafge", "Encrypt"))
         self.decrypt.setText(_translate("Messafge", "Decrypt"))
-        self.tabW.setTabText(self.tabW.indexOf(self.tab_2), _translate("Messafge", "Decrypt"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.decrypt_tab), _translate("Messafge", "Decrypt"))
