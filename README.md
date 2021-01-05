@@ -7,7 +7,6 @@ You can encrypt and decrypt text using your own dictionary
 
 You must first download the repository
 
-[comment]: <> (Linux/MacOS/Termux)
     sudo apt-get install git
     git clone https://github.com/caxapok1python/messafge
 
