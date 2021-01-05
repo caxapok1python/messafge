@@ -21,6 +21,10 @@ class App(QMainWindow):
             crypt = encrypt.crypt(text)
             self.ui.encrypt_out.setText(crypt)
             self.ui.encrypt_out.update()
+            self.ui.decrypt_out.clear()
+            self.ui.decrypt_input.clear()
+            self.ui.decrypt_input.update()
+            self.ui.decrypt_out.update()
         except Exception as e:
             self.ui.encrypt_out.setText(f"ERROR: {e}")
             self.ui.encrypt_out.update()
@@ -31,6 +35,10 @@ class App(QMainWindow):
             crypt = decrypt.encrypt(str(text))
             self.ui.decrypt_out.setText(crypt)
             self.ui.decrypt_out.update()
+            self.ui.encrypt_out.clear()
+            self.ui.encrypt_input.clear()
+            self.ui.encrypt_input.update()
+            self.ui.encrypt_out.update()
         except Exception as e:
             self.ui.decrypt_out.setText(f"ERROR: {e}")
             self.ui.decrypt_out.update()
