@@ -37,16 +37,16 @@ In works on python3 only
 An interface is available on this platform.
 Follow the instructions to start it.
     
-    pyhon gui.py
+    python3 gui.py
 
 To run the console version:
     
-    python console.py
+    python3 console.py
 
 # Termux
 Only console version is available here
 
-    python console.py
+    python3 console.py
 ***
 
 # How to communicate with friends
