@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Messafge</class>
+ <widget class="QMainWindow" name="Messafge">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>320</width>
+    <height>240</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>320</width>
+    <height>240</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Futura</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Messafge</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>0.850000000000000</double>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+background: #606061;
+border-radius: 10px;
+color: black;
+}
+QPushButton:hover{
+background: #D1AF00;
+}
+QPushButton:pressed{
+background: #9A7300;
+border-radius: 13px;
+}
+
+QPlainTextEdit{
+background: #2E2E2E;
+border-radius: 10%;
+сolor: rgb(204, 204, 204);
+font: 13pt &quot;Gill Sans&quot;;
+}
+
+QTextBrowser{
+background: #2E2E2E;
+border-radius: 10%;
+}
+
+QMainWindow{
+background-color: #393939;
+}
+</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>321</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>321</width>
+      <height>241</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>true</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="encrypt_tab">
+     <attribute name="title">
+      <string>Encrypt</string>
+     </attribute>
+     <widget class="QPushButton" name="encrypt">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>175</y>
+        <width>301</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="encrypt_out">
+      <property name="geometry">
+       <rect>
+        <x>-2</x>
+        <y>79</y>
+        <width>321</width>
+        <height>91</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="encrypt_input">
+      <property name="geometry">
+       <rect>
+        <x>-3</x>
+        <y>0</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="decrypt_tab">
+     <attribute name="title">
+      <string>Decrypt</string>
+     </attribute>
+     <widget class="QPushButton" name="decrypt">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>175</y>
+        <width>301</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="decrypt_input">
+      <property name="geometry">
+       <rect>
+        <x>-4</x>
+        <y>0</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="decrypt_out">
+      <property name="geometry">
+       <rect>
+        <x>-3</x>
+        <y>79</y>
+        <width>321</width>
+        <height>91</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
